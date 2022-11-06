@@ -1,6 +1,13 @@
 {
-    "search-filter.inComments": "在注释中搜索"
-    ,"search-filter.notInComments": "在代码中搜索" 
-    ,"search-filter.doFilter": "在结果中过滤"
-    ,"search-filter.doNotFilter": "取消过滤"
+    "search-filter.inComments": "代码中过滤->在注释中"
+    ,"search-filter.maxNumFiles": "搜索结果中文件的最大数量"
+    ,"search-filter.inCommentsIntro": "在注释/Code切换"
+    ,"search-filter.notInComments": "注释中过滤->代码中" 
+    ,"search-filter.doFilter": "显示全部->启用过滤"
+    ,"search-filter.doFilterIntro": "启用搜索结果注释"
+    ,"search-filter.doNotFilter": "已过滤->取消过滤"
+    ,"search-filter.inString": "全部代码->字符串中"
+    ,"search-filter.inStringIntro": "在全部代码/字符串/非字符串中"
+    ,"search-filter.notInString": "字符串中->非字符串中"
+    ,"search-filter.codeAll": "非字符串中->全部代码"
 }

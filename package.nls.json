@@ -1,6 +1,13 @@
 {
     "search-filter.inComments": "In Comments"
+    ,"search-filter.maxNumFiles": "Max Number of Files in Search Result"
+    ,"search-filter.inCommentsIntro": "Filter Comments/Code"
     ,"search-filter.notInComments": "In Code"
     ,"search-filter.doFilter": "Filter of Search Result"
+    ,"search-filter.doFilterIntro": "Whether do search filter"
     ,"search-filter.doNotFilter": "Remove filter of Search"
+    ,"search-filter.inString": "Filter String"
+    ,"search-filter.inStringIntro": "Filter All/String/None-String"
+    ,"search-filter.notInString": "Filter None-String"
+    ,"search-filter.codeAll": "Filter All Code"
 }
