@@ -22,12 +22,21 @@
   "contributes": {
     "commands": [
       {
+        "command": "searchFilter.doFilter",
+        "enablement": "editorLangId == search-result",
+        "title": "%search-filter.doFilter%",
+        "icon": {
+          "light": "images/filter_light.svg",
+          "dark": "images/filter.svg"
+        }
+      },
+      {
         "command": "searchFilter.inComments",
         "enablement": "editorLangId == search-result",
         "title": "%search-filter.inComments%",
         "icon": {
-          "light": "images/triangle-left_light.svg",
-          "dark": "images/triangle-left.svg"
+          "light": "images/commentLine_light.svg",
+          "dark": "images/commentLine.svg"
         }
       },
       {
@@ -35,8 +44,8 @@
         "enablement": "editorLangId == search-result",
         "title": "%search-filter.notInComments%",
         "icon": {
-          "light": "images/triangle-right_light.svg",
-          "dark": "images/triangle-right.svg"
+          "light": "images/code_light.svg",
+          "dark": "images/code.svg"
         }
       }
     ],

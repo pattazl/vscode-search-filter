@@ -1,4 +1,6 @@
 {
-    "search-filter.inComments": "Filter in Comments"
-    ,"search-filter.notInComments": "Filter in Code"
+    "search-filter.inComments": "In Comments"
+    ,"search-filter.notInComments": "In Code"
+    ,"search-filter.doFilter": "Filter of Search Result"
+    ,"search-filter.doNotFilter": "Remove filter of Search"
 }

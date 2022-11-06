@@ -1,4 +1,6 @@
 {
-    "search-filter.inComments": "在注释中搜索",
-    "search-filter.notInComments": "在代码中搜索"   // 非注释即为代码
+    "search-filter.inComments": "在注释中搜索"
+    ,"search-filter.notInComments": "在代码中搜索" 
+    ,"search-filter.doFilter": "在结果中过滤"
+    ,"search-filter.doNotFilter": "取消过滤"
 }
