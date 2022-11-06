@@ -1,0 +1,4 @@
+{
+    "search-filter.inComments": "在注释中搜索",
+    "search-filter.notInComments": "在代码中搜索"   // 非注释即为代码
+}
