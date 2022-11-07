@@ -88,37 +88,37 @@
     "menus": {
       "editor/title": [
         {
-          "when": " editorLangId == search-result && searchFilter.doFilterFlag == true",
+          "when": " editorLangId == search-result && searchFilter.Flag.DoFilter == true",
           "command": "searchFilter.doNotFilter",
           "group": "navigation@1"
         },
         {
-          "when": "editorLangId == search-result  && searchFilter.doFilterFlag == false",
+          "when": "editorLangId == search-result  && searchFilter.Flag.DoFilter == false",
           "command": "searchFilter.doFilter",
           "group": "navigation@1"
         },
         {
-          "when": " editorLangId == search-result && searchFilter.inCommentsFlag == false && searchFilter.doFilterFlag == true",
+          "when": " editorLangId == search-result && searchFilter.Flag.InComments == false && searchFilter.Flag.DoFilter == true",
           "command": "searchFilter.inComments",
           "group": "navigation@2"
         },
         {
-          "when": "editorLangId == search-result  && searchFilter.inCommentsFlag == true && searchFilter.doFilterFlag == true",
+          "when": "editorLangId == search-result  && searchFilter.Flag.InComments == true && searchFilter.Flag.DoFilter == true",
           "command": "searchFilter.notInComments",
           "group": "navigation@2"
         },
         {
-          "when": "editorLangId == search-result  && searchFilter.inCommentsFlag == false && searchFilter.doFilterFlag == true && searchFilter.StringFlag ==0",
+          "when": "editorLangId == search-result  && searchFilter.Flag.InComments == false && searchFilter.Flag.DoFilter == true && searchFilter.Flag.String ==0",
           "command": "searchFilter.inString",
           "group": "navigation@3"
         },
         {
-          "when": " editorLangId == search-result && searchFilter.inCommentsFlag == false && searchFilter.doFilterFlag == true && searchFilter.StringFlag ==1",
+          "when": " editorLangId == search-result && searchFilter.Flag.InComments == false && searchFilter.Flag.DoFilter == true && searchFilter.Flag.String ==1",
           "command": "searchFilter.notInString",
           "group": "navigation@3"
         },
         {
-          "when": "editorLangId == search-result  && searchFilter.inCommentsFlag == false && searchFilter.doFilterFlag == true && searchFilter.StringFlag ==2",
+          "when": "editorLangId == search-result  && searchFilter.Flag.InComments == false && searchFilter.Flag.DoFilter == true && searchFilter.Flag.String ==2",
           "command": "searchFilter.codeAll",
           "group": "navigation@3"
         }
