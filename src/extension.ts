@@ -2,7 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 import { commands } from 'vscode';
-import { filterFlag, setFlag, showIt } from './index';
+import { filterFlag, setFlag, showIt,triggerDocChange } from './index';
 //import {vscAnalyze,initPara,vscClean,vscMove,vscDownload, vscUpload,vscInsertClip,
 //	vscConvertImageFormat,vscConvertImageLink}  from './index';
 // this method is called when your extension is activated
@@ -10,7 +10,7 @@ import { filterFlag, setFlag, showIt } from './index';
 
 export function activate(context: vscode.ExtensionContext) {
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	let activeEditor: vscode.TextEditor;
+	//let activeEditor: vscode.TextEditor;
 	console.log('Congratulations, extension "searchFilter" is now active!');
 
 	// The command has been defined in the package.json file
@@ -71,8 +71,11 @@ export function activate(context: vscode.ExtensionContext) {
 	vscode.window.onDidChangeActiveTextEditor(async editor => {
 		console.log('onDidChangeActiveTextEditor')
 		if (editor) {
-			activeEditor = editor;
 
+			if (editor && editor.document.languageId === "search-result") {
+				triggerDocChange(editor.document)
+				//triggerUpdateDecorations();  activeEditor.document.uri.fragment
+			}
 			// Set regex for updated language
 			// await parser.SetRegex(editor.document.languageId);
 
@@ -94,9 +97,8 @@ export function activate(context: vscode.ExtensionContext) {
 		if (event.contentChanges.length === 0 || event.document.languageId !== "search-result" ) {
 			return
 		}
-		if (activeEditor && event.document === activeEditor.document) {
-			//triggerUpdateDecorations();  activeEditor.document.uri.fragment
-		}
+		// 当前窗口操作，需要保存相关数据
+		triggerDocChange(event.document)
 	}, null, context.subscriptions);
 
 
