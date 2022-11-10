@@ -97,6 +97,9 @@ export function activate(context: vscode.ExtensionContext) {
 		if (event.contentChanges.length === 0 || event.document.languageId !== "search-result" ) {
 			return
 		}
+		// try to provideTextSearchResults and TextSearchResult
+		// https://code.visualstudio.com/updates/v1_26#_textsearchprovider-filesearchprovider-fileindexprovider
+		// FileSearchProvider
 		// 当前窗口操作，需要保存相关数据
 		triggerDocChange(event.document)
 	}, null, context.subscriptions);
