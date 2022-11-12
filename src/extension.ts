@@ -1,13 +1,41 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
-import { commands } from 'vscode';
+import { commands ,workspace} from 'vscode';
 import { filterFlag, setFlag, showIt,triggerDocChange } from './index';
 //import {vscAnalyze,initPara,vscClean,vscMove,vscDownload, vscUpload,vscInsertClip,
 //	vscConvertImageFormat,vscConvertImageLink}  from './index';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 
+async function discoverAllFilesInWorkspace() {
+	if (!vscode.workspace.workspaceFolders) {
+	  return []; // handle the case of no open folders
+	}
+	  vscode.workspace.workspaceFolders.map(async workspaceFolder => {
+		const pattern = new vscode.RelativePattern(workspaceFolder, '**/*.md');
+		// const watcher = vscode.workspace.createFileSystemWatcher(pattern);
+  
+		// // When files are created, make sure there's a corresponding "file" node in the tree
+		// watcher.onDidCreate(uri => getOrCreateFile(uri));
+		// // When files change, re-parse them. Note that you could optimize this so
+		// // that you only re-parse children that have been resolved in the past.
+		// watcher.onDidChange(uri => parseTestsInFileContents(getOrCreateFile(uri)));
+		// // And, finally, delete TestItems for removed files. This is simple, since
+		// // we use the URI as the TestItem's ID.
+		// watcher.onDidDelete(uri => controller.items.delete(uri.toString()));
+  
+		for (const file of await vscode.workspace.findFiles(pattern)) {
+		  console.log(file)
+		}
+  /* 
+		for (const file of await vscode.workspace.findFiles('**​/*', '**​/*', 10)) {
+			console.log(file)
+		}
+		*/
+	  });
+
+  }
 export function activate(context: vscode.ExtensionContext) {
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	//let activeEditor: vscode.TextEditor;
@@ -23,10 +51,12 @@ export function activate(context: vscode.ExtensionContext) {
 		//vscAnalyze();
 		let cte = vscode.window.activeTextEditor;
 		//config.searchFilter.inComments = true
-		setFlag('DoFilter', true)
+		/*setFlag('DoFilter', true)
 		setFlag('InComments', false)  // 默认设置为代码中过滤
 		setFlag('String', 0)  // 默认全部代码
-		showIt(textEditor)
+		showIt(textEditor)*/
+		//let res = await workspace.findFiles('**​/*.ts', '**​/node_modules/**', 10)
+		discoverAllFilesInWorkspace()
 	})
 	let dispDoNotFilter = commands.registerCommand("searchFilter.doNotFilter", async (textEditor: vscode.TextEditor) => {
 		//if(!initPara()){return;} // 参数可能更新，重新从配置中获取初始化参数

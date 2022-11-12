@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import * as path from 'path'
-import {commands,TextEditor,TextDocument,} from 'vscode';
+import {commands,TextEditor,TextDocument, workspace } from 'vscode';
 let filterFlag={
     // eslint-disable-next-line @typescript-eslint/naming-convention
     DoFilter : true,
