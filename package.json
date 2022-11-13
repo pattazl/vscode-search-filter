@@ -19,6 +19,7 @@
     ,"onCommand:searchFilter.inString"
     ,"onCommand:searchFilter.notInString"
     ,"onCommand:searchFilter.codeAll"
+    ,"onLanguage:search-result"
   ],
   "repository": {
     "url": "https://gitee.com/pattazl/search-filter"
